@@ -1,13 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <!-- <HelloWorld msg="Welcome to Your Vue.js App"/> -->
-  
-  <div id="nav">
-    <router-link to="/">Home</router-link> |
-    <router-link to="/about">About</router-link>
+  <div class="card">
+    <div class="card___container">
+      <div class="card__overview">
+        <router-view/>
+      </div>
+      <ul class="card__tags">
+        <li class="card__tag">
+            <a class="card__tag-link" target="_blank" href="https://codepen.io/condrado/pens/">Codepen</a>
+        </li>
+        <li class="card__tag">
+            <a class="card__tag-link" target="_blank" href="https://github.com/conradoTCK">Github</a>
+        </li>
+        <li class="card__tag">
+            <a class="card__tag-link" target="_blank" href="https://es.linkedin.com/in/conrado-ramos-rivas-36973230">Linkedin</a>
+        </li>
+      </ul>
+    </div>
   </div>
-
-  <router-view/>
 </template>
 
 <script>
@@ -19,13 +28,8 @@ export default {
 }
 </script>
 
-<style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
-}
+<style lang="scss">
+@import "./assets/styles/index.scss";
+@import "./assets/styles/06-components/_components.button.scss";
+@import "./assets/styles/06-components/_components.card.scss";
 </style>
