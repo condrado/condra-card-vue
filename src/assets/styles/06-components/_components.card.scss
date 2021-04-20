@@ -14,6 +14,11 @@
         position: relative;
         width: 100%;
         height: 100vh;
+        opacity: 1;
+        -webkit-transition: opacity 0.5s ease;
+        -moz-transition: opacity 0.5s ease;
+        -o-transition: opacity 0.5s ease;
+        transition: opacity 0.5s ease;
 
         @include tablet-s {
             width: auto;
@@ -31,6 +36,14 @@
                     transition: right 0.5s ease;
                 }
             }
+        }
+
+        &.hide-card {
+            opacity: 0;
+            -webkit-transition: opacity 0.5s ease;
+            -moz-transition: opacity 0.5s ease;
+            -o-transition: opacity 0.5s ease;
+            transition: opacity 0.5s ease;
         }
     }
 

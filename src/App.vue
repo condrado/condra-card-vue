@@ -1,6 +1,6 @@
 <template>
   <div class="card">
-    <div class="card___container">
+    <div :class="{ 'hide-card': isHideCard }" class="card___container ">
       <div class="card__overview">
         <router-view/>
       </div>
@@ -24,12 +24,22 @@
 export default {
   name: 'App',
   components: {
+  },
+  data() {
+    return {
+      isHideCard: true,
+    }
+  },
+  mounted(){
+    setTimeout(() => {
+      this.isHideCard = false;
+    }, 1000)
   }
 }
 </script>
 
 <style lang="scss">
-@import "./assets/styles/index.scss";
-@import "./assets/styles/06-components/_components.button.scss";
-@import "./assets/styles/06-components/_components.card.scss";
+  @import "./assets/styles/index.scss";
+  @import "./assets/styles/06-components/_components.button.scss";
+  @import "./assets/styles/06-components/_components.card.scss";
 </style>
