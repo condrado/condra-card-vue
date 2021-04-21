@@ -36,8 +36,6 @@
 </template>
 
 <script>
-//import projectsJson from '../data/projects.json'
-import dateJson from '../data/date.json'
 import axios from 'axios'
 
 export default {
@@ -47,9 +45,10 @@ export default {
   },
   data() {
     return{
-        baseUrl: process.env.VUE_APP_BASE_URL,
+        projectsUrl: process.env.VUE_APP_PROJECTS_URL,
+        dateUrl: process.env.VUE_APP_DATE_URL,
         projectsJson: {},
-        dateJson: dateJson
+        dateJson: {}
     }
   },
   created(){
@@ -58,9 +57,18 @@ export default {
   methods: {
     fetchData(){
       axios
-        .get(this.baseUrl)
+        .get(this.projectsUrl)
         .then(response => {
           this.projectsJson = response.data;
+        })
+        .catch(error => {
+          console.log(error)
+        })
+
+      axios
+        .get(this.dateUrl)
+        .then(response => {
+          this.dateJson = response.data;
         })
         .catch(error => {
           console.log(error)

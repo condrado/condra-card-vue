@@ -20,7 +20,7 @@
         </div>
 
         <div class="card__footer">
-          <router-link to="/Page2" class="c-btn c-btn--primary c-btn--return">Continuar</router-link>
+          <router-link to="/page2" class="c-btn c-btn--primary c-btn--return">Continuar</router-link>
         </div>
     </section>
 </div>
